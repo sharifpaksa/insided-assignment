@@ -1,0 +1,22 @@
+<div class="dropdown-container" ng-click="openDropdown()">
+	<span>{{label}}</span>
+	<div ng-if="calendar === false">
+		<ul class="dropdown">
+			<div ng-if="checkboxes === true && filter === false && calendar === false">
+				<span>
+					<a ng-click="checkAllBoxes()">Check all</a>
+					<a ng-click="uncheckAllBoxes()">Uncheck all</a>
+				</span>
+				<li ng-repeat="opt in opts track by $index">
+					<label><input type="checkbox"> {{opt}}</label>
+				</li>
+			</div>
+			<div ng-if="checkboxes === false && filter === true && calendar === false">
+				<li ng-repeat="opt in opts" ng-click="setValue(opt)">{{opt}}</li>
+			</div>
+		</ul>
+	</div>
+	<div ng-if="calendar === true && filter === false && checkboxes === false">
+		<quick-datepicker on-change="setDate()" ng-model="dateVal" disable-timepicker="true" disable-datepicker="true"></quick-datepicker>
+	</div>
+</div>

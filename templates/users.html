@@ -1,0 +1,103 @@
+<!-- Filters -->
+<div class="box">
+	<div class="row">
+		<div class="w100 column">
+			<b>Advanced search</b>
+		</div>
+	</div>
+	<div class="filter-rows">
+		<sp-search-filter></sp-search-filter>
+	</div>
+	<div class="padder">
+		<button class="button-green" ng-click="addFilterRow()">Add row</button>
+	</div>
+</div>
+
+<!-- Checkboxes -->
+<div class="box columns">
+	<div class="row">
+		<div class="w100 column">
+			<b>Columns</b>
+			<div class="row">
+				<div class="w16 left" ng-repeat="w in [1,2,3,4,5,6]">
+					<label><input type="checkbox"> Usertitle</label>
+					<label><input type="checkbox"> Comments</label>
+					<label><input type="checkbox"> Deleted comments</label>
+					<label><input type="checkbox"> Deleted topics</label>
+					<label><input type="checkbox"> Questions solved</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="box less-top-bottom-padding">
+	<div class="row">
+		<div class="w100 column">
+			<button class="button-blue">Update</button> &nbsp;&nbsp;<a class="cancel-text">Cancel</a>
+		</div>
+	</div>
+</div>
+
+<!-- Tags -->
+<div class=" applied-filters">
+	<div class="left">
+		<div ng-if="selectedFilters.length > 0" id="tags">
+			<button class="button-tag selected-filter" ng-click="removeRow(tag)" ng-repeat="tag in selectedFilters track by $index">
+				<i class="ion-close" ng-click="removeRowAndTag(tag)"></i> {{tag}}
+			</button>
+			<a class="cancel-text" ng-click="clearSelection()">Clear selection</a>
+		</div>
+	</div>
+	<div class="right text-right">
+		<sp-pagination></sp-pagination>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<!-- Search results table -->
+<div class="search-results">
+	<div class="row">
+		<table>
+			<thead>
+				<tr>
+					<th width="25"><input type="checkbox"></th>
+					<th width="260">Username</th>
+					<th width="70">Comments</th>
+					<th width="70">Topics</th>
+					<th width="130">Usergroup</th>
+					<th width="130">Registration date</th>
+					<th width="130">Last login</th>
+					<th width="130">Last comment</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="a in results" id="result-{{$index}}">
+					<td><input type="checkbox" ng-click="resultChecked($index)"></td>
+					<td><div class="picture" style="background:url({{a.picture}}) center center / cover;"></div><a href="#">{{a.name}}</a><div class="right"><a href="#"><i class="ion-ios-photos-outline"></i></a></div></td>
+					<td>{{a.comments}}</td>
+					<td>{{a.topics}}</td>
+					<td>{{a.usergroup}}</td>
+					<td>{{a.regdate}}</td>
+					<td>{{a.lastlogin}}</td>
+					<td>{{a.lastcomment}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="table-footer">
+		<div class="left" ng-if="selectedResults.length > 0">
+			<sp-dropdown-b label="Choose usergroup" opts="Registered user,Super-user,Moderator" checkboxes="false" filter="true" calendar="false" disabled="false"></sp-dropdown-b>
+			<sp-dropdown-b label="Add secondary us..." opts="Registered user,Super-user,Moderator" checkboxes="false" filter="true" calendar="false" disabled="false"></sp-dropdown-b>
+			<sp-dropdown-b label="Permissions" opts="Permission #1,Permission #2,Permission #3" checkboxes="true" filter="false" calendar="false" disabled="false"></sp-dropdown-b>
+			<button class="button-tag">
+				Apply
+			</button>
+		</div>
+		<div class="right text-right">
+			<sp-pagination></sp-pagination>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

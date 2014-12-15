@@ -1,0 +1,122 @@
+<div class="row">
+  <!-- First filter -->
+
+  <div class="w25 column">
+    <sp-dropdown label="Select a filter" opts="['Comments', 'Registration date', 'Usergroup']" checkboxes="false" filter="true" disabled="false"></sp-dropdown>
+  </div>
+
+  <!-- Second filter -->
+
+  <div class="w25 column" ng-if="firstFilter == 0">
+    <select class="select-control disabled" disabled="true">
+      <option value="0" selected>No filter selected</option>
+    </select>
+    <span class="ion-arrow-down-b select-control-down-arrow disabled"></span>
+  </div>
+
+  <div class="w25 column" ng-if="firstFilter == 1">
+      <select class="select-control">
+        <option value="0">is greater than</option>
+        <option value="1">is less than</option>
+      </select>
+      <span class="ion-arrow-down-b select-control-down-arrow"></span>
+  </div>
+
+  <div class="w25 column" ng-if="firstFilter == 2">
+    <select class="select-control">
+      <option value="0">before</option>
+      <option value="1">after</option>
+      <option value="2">on</option>
+    </select>
+    <span class="ion-arrow-down-b select-control-down-arrow"></span>
+  </div>
+
+  <div class="w25 column" ng-if="firstFilter == 3">
+    <div class="select-control" id="groupOptionsControl">
+      <span ng-click="showGroupOptions()">Select one or more options</span>
+      <div class="options-dropdown" id="groupOptionsDropdown">
+        <a ng-click="checkAllGroupOptions()">Check all</a>
+        <a ng-click="uncheckAllGroupOptions()">Uncheck all</a>
+        <br>
+        <b>Group 1</b>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o1"> Option #1 for group 1
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o2"> Option #2 for group 1
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o3"> Option #3 for group 1
+        </label>
+        <b>Group 2</b>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o1"> Option #1 for group 2
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o2"> Option #2 for group 2
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o3"> Option #3 for group 2
+        </label>
+      </div>
+    </div>
+    <span class="ion-arrow-down-b select-control-down-arrow" id="groupOptionsArrow" ng-click="showGroupOptions()"></span>
+  </div>
+
+  <!-- Third filter -->
+
+  <div class="w25 column" ng-if="firstFilter == 1">
+    <select class="select-control" ng-model="commentFilter">
+      <option value="5">5</option>
+      <option value="15">15</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+    <span class="ion-arrow-down-b select-control-down-arrow"></span>
+  </div>
+
+  <!-- Calendar -->
+
+  <div class="w25 column" ng-if="firstFilter == 2">
+    <div class="select-control" id="calendarDropdownControl">
+      <span ng-click="showCalendarDropdown()" class="span-padding-right">Calendar</span>
+      <div class="options-dropdown" id="calendarDropdown">
+        <a ng-click="checkAllGroupOptions()">Check all</a>
+        <a ng-click="uncheckAllGroupOptions()">Uncheck all</a>
+        <br>
+        <b>Group 1</b>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o1"> Option #1 for group 1
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o2"> Option #2 for group 1
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g1o3"> Option #3 for group 1
+        </label>
+        <b>Group 2</b>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o1"> Option #1 for group 2
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o2"> Option #2 for group 2
+        </label>
+        <label>
+          <input type="checkbox" ng-model="selectedGroupOptions.g2o3"> Option #3 for group 2
+        </label>
+      </div>
+      <span class="ion-arrow-down-b select-control-down-arrow" id="calendarDropdownArrow"></span>
+    </div>
+  </div>
+
+  <!-- Delete buttons -->
+
+  <div class="w25 column last" ng-if="firstFilter == 1">
+    <button class="button-red" ng-click="deleteRow()"><i class="ion-close"></i></button>
+  </div>
+
+  <div class="w25 column last" ng-if="isInGroupArray(selectedGroupOptions) && firstFilter == 3">
+    <button class="button-red" ng-click="deleteGroupOptionsRow()"><i class="ion-close"></i></button>
+  </div>
+
+</div>

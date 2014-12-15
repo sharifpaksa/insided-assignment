@@ -1,0 +1,21 @@
+@mixin gradient($van, $naar) {
+	background-image: -webkit-gradient(linear, left top, left bottom, from($van), to($naar));
+	background-image: -webkit-linear-gradient(top, $van, $naar);
+	background-image: -moz-linear-gradient(top, $van, $naar);
+	background-image: -ms-linear-gradient(top, $van, $naar);
+	background-image: -o-linear-gradient(top, $van, $naar);
+	background-image: linear-gradient(top, $van, $naar);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$van}', EndColorStr='#{$naar}');
+}
+
+@mixin box-shadow($x, $y, $s, $b, $c) {
+	-webkit-box-shadow: $x $y $b $s $c;
+	-moz-box-shadow: $x $y $b $s $c;
+	box-shadow: $x $y $b $s $c;
+}
+
+@mixin border-radius($r) {
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+	border-radius: $r;
+}

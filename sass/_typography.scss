@@ -1,0 +1,39 @@
+body {
+	font-family: $font;
+	font-size:100%;
+	line-height: 1.5;
+	font-weight: $normal-weight;
+	-webkit-font-smoothing:antialiased !important;
+	-moz-osx-font-smoothing:grayscale !important;
+	line-height: 1.5;
+	font-weight: $normal-weight;
+}
+
+h1,h2,h3,h4,h5 {
+	font-weight: $header-weight;
+}
+
+a {
+	color: $blue;
+	text-decoration: none;
+}
+
+a:hover{
+	cursor: pointer !important;
+}
+
+a.cancel-text {
+	color: #d9604c;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}

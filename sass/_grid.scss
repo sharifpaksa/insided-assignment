@@ -1,0 +1,68 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 10px;
+	position: relative;
+}
+
+.left {
+	float: left !important;
+}
+
+.right {
+	float: right !important;
+	@media only screen and (max-width: 40em) {
+		float: left !important;
+	}
+}
+
+.row {
+	width: 100%;
+	display: inline-block;
+	.column {
+		float: left;
+		padding: 0 5px;
+		&:last-of-type {
+			float: right;
+		}
+	}
+	.last {
+		float: left !important;
+	}
+	.w16 {
+		width: 16.66666666667%;
+		position: relative;
+		@media only screen and (max-width: 40em) {
+			width: 50%;
+			margin-bottom: 10px;
+		}
+		@media only screen and (min-width: 40.043em) and (max-width: 54em) {
+			width: 33.33333333337%;
+		}
+	}
+	.w25 {
+		width: 25%;
+		position: relative;
+		@media only screen and (max-width: 40em) {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		@media only screen and (min-width: 40.043em) and (max-width: 54em) {
+			width: 50%;
+		}
+		@media only screen and (min-width: 54.063em) and (max-width: 70em) {
+			width: 30%;
+		}
+	}
+	.w50 {
+		width: 50%;
+		position: relative;
+		@media only screen and (max-width: 70em) {
+			width: 100%;
+		}
+	}
+	.w100 {
+		position: relative;
+		width: 100%;
+	}
+}

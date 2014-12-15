@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica.eot');
+  src: url('Helvetica.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica.svg#9b846c60f2b2d24b350f55077e4dd894') format('svg'),
+       url('Helvetica.woff') format('woff'),
+       url('Helvetica.ttf')  format('truetype');
+       
+  font-style:   normal;
+  font-weight:  500;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Bold.eot');
+  src: url('Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-Bold.svg#610d85844426fe869d03291a77cd7d53') format('svg'),
+       url('Helvetica-Bold.woff') format('woff'),
+       url('Helvetica-Bold.ttf')  format('truetype');
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-BoldOblique.eot');
+  src: url('Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-BoldOblique.svg#df264917402f702e1e483813d0e15238') format('svg'),
+       url('Helvetica-BoldOblique.woff') format('woff'),
+       url('Helvetica-BoldOblique.ttf')  format('truetype');
+       
+  font-style:   oblique;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Light.eot');
+  src: url('Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-Light.svg#53fc34fb6737daa8ac541a82b0a99ee9') format('svg'),
+       url('Helvetica-Light.woff') format('woff'),
+       url('Helvetica-Light.ttf')  format('truetype');
+       
+  font-style:   normal;
+  font-weight:  100;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-LightOblique.eot');
+  src: url('Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-LightOblique.svg#7ab1c9cd23568e675141d83afcce25fc') format('svg'),
+       url('Helvetica-LightOblique.woff') format('woff'),
+       url('Helvetica-LightOblique.ttf')  format('truetype');
+       
+  font-style:   oblique;
+  font-weight:  100;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Oblique.eot');
+  src: url('Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-Oblique.svg#d8db6b77e5c3bec23b742390a43fcb72') format('svg'),
+       url('Helvetica-Oblique.woff') format('woff'),
+       url('Helvetica-Oblique.ttf')  format('truetype');
+       
+  font-style:   oblique;
+  font-weight:  500;
+}
+

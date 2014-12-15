@@ -1,0 +1,53 @@
+<div class="row filter-row">
+
+  <div class="w25 column">
+    <sp-dropdown label="Select a filter" opts="Comments,Registration date,Usergroup" checkboxes="false" filter="true" calendar="false" disabled="false"></sp-dropdown>
+  </div>
+
+  <div class="w25 column" ng-if="firstFilter == 0">
+    <sp-dropdown label="Select a filter first" opts="" checkboxes="false" filter="true" calendar="false" disabled="true"></sp-dropdown>
+  </div>
+
+  <!-- If Comments is selected filter -->
+  <div class="w25 column" ng-if="firstFilter == 1">
+      <sp-dropdown label="Choose option" opts="is greater than,is less than" checkboxes="false" filter="true" calendar="false" disabled="false"></sp-dropdown>
+  </div>
+
+  <div class="w25 column" ng-if="secondFilter == 0 && firstFilter == 1">
+    <sp-dropdown label="Choose an option first" opts="" checkboxes="false" filter="true" calendar="false" disabled="true"></sp-dropdown>
+  </div>
+
+  <div class="w25 column" ng-if="secondFilter != 0 && firstFilter == 1">
+    <sp-dropdown label="Choose a value" opts="5,15,50,100" checkboxes="false" filter="true" calendar="false" disabled="false"></sp-dropdown>
+  </div>
+
+  <!-- If Registration date is selected filter -->
+  <div class="w25 column" ng-if="firstFilter == 2">
+      <sp-dropdown label="Choose option" opts="before,after,on" checkboxes="false" filter="true" calendar="false"  checkboxes="false"></sp-dropdown>
+  </div>
+
+  <div class="w25 column" ng-if="secondFilter == 0 && firstFilter == 2">
+    <sp-dropdown label="Choose an option first" opts="" checkboxes="false" filter="true" calendar="false" disabled="true"></sp-dropdown>
+  </div>
+
+  <div class="w25 column" ng-if="secondFilter != 0 && firstFilter == 2">
+    <sp-dropdown label="Select a date" opts="" checkboxes="false" filter="false" calendar="true" disabled="false"></sp-dropdown>
+  </div>
+
+  <!-- If Usergroup is selected filter -->
+  <div class="w25 column" ng-if="firstFilter == 3">
+      <sp-dropdown label="Select one or more options" opts="Option #1 for group 1,Option #2 for group 1,Option #3 for group 1" checkboxes="true" filter="false" calendar="false" disabled="false"></sp-dropdown>
+  </div>
+
+  <div class="w25 column last" ng-if="firstFilter != 0 && secondFilter != 0 && thirdFilter != 0">
+    <button class="button-red" ng-click="deleteRow()"><i class="ion-close"></i></button>
+  </div>
+
+  <div class="w25 column last" ng-if="firstFilter == 3">
+    <button class="button-red" ng-click="deleteRow()"><i class="ion-close"></i></button>
+  </div>  
+
+  <div class="w25 column last" ng-if="secondFilter != 0 && firstFilter == 2">
+    <button class="button-red" ng-click="deleteRow()"><i class="ion-close"></i></button>
+  </div>  
+</div>
